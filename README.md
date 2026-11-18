@@ -33,6 +33,10 @@ purgecss.config.cjs · package.json   Herramientas de build y validación (opcio
 - **Narrativa:** Hero → Beneficios → Producto → Fórmula (selector de activos) → Ciencia + lifestyle → Mañana y noche → Tipos de piel → FAQ → CTA.
 - **Sin prueba social inventada:** no hay testimonios, estudios ni cifras. Todo el contenido sale de los materiales de marca (díptico, versión para celular, aviso y la presentación LITE).
 
+## Publicación
+
+GitHub Pages: rama `main`, carpeta raíz (`/`). Cada push a `main` se publica solo en 1 o 2 minutos.
+
 ## Uso local
 
 ```bash
@@ -85,7 +89,7 @@ npm run validate:html && npm run validate:css
 
 ## Antes de publicar
 
-1. **URL definitiva:** reemplazar `https://www.example.com/niacider-serum/` en `index.html` (canonical, Open Graph, Twitter y JSON-LD), `robots.txt` y `sitemap.xml`.
+1. **URL pública:** publicada en GitHub Pages, en `https://rosariogebala-cyber.github.io/niacider-serum-landing/`. Si se mueve a otro dominio, actualizar esa URL en `index.html` (canonical, Open Graph, Twitter y JSON-LD), `robots.txt` y `sitemap.xml`.
 2. **CTA de compra:** el botón final apunta a `https://www.cassara.com.ar/`. Confirmar la URL o reemplazarla por la tienda o el buscador de farmacias.
 3. **Licencia de Midnight Drive:** la fuente declara *"Free for personal use only"*. Confirmar que Cassará tiene licencia comercial (si se usó en las piezas impresas, probablemente sí). Si no, reemplazarla por una manuscrita con licencia OFL.
 4. **Revisión regulatoria:** validar los textos de beneficios con el área correspondiente. Están tomados textualmente de las piezas aprobadas.

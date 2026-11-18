@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.example.com/niacider-serum/sitemap.xml
+Sitemap: https://rosariogebala-cyber.github.io/niacider-serum-landing/sitemap.xml
