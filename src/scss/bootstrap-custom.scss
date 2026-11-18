@@ -1,0 +1,51 @@
+// Build a medida de Bootstrap 5.3: solo los módulos que usa la landing.
+// Compilar: npm run build:bootstrap  →  assets/vendor/bootstrap/bootstrap.min.css
+
+// 1. Configuración
+@import "bootstrap/scss/functions";
+
+$font-family-sans-serif: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+$body-color: #3e3e46;
+$body-bg: #fcf8f9;
+$primary: #0f7680;   // turquesa NIACIDER accesible (5.35:1 sobre blanco)
+$secondary: #4a4a52;
+$link-color: #0f7680;
+$enable-smooth-scroll: true;
+$enable-reduced-motion: true;
+$enable-dark-mode: false;
+$grid-gutter-width: 2rem;
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1180px, xxl: 1320px);
+$navbar-padding-y: 0;
+$accordion-bg: transparent;
+$accordion-border-color: rgba(74, 74, 82, .18);
+$accordion-border-radius: 0;
+$accordion-inner-border-radius: 0;
+$accordion-button-active-bg: transparent;
+$accordion-button-active-color: #0f7680;
+$accordion-button-focus-box-shadow: none;
+$accordion-icon-color: #0f7680;
+$accordion-icon-active-color: #0f7680;
+$accordion-button-padding-y: 1.35rem;
+$accordion-button-padding-x: 0;
+$accordion-body-padding-x: 0;
+
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+
+// 2. Núcleo
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/grid";
+
+// 3. Componentes usados
+@import "bootstrap/scss/transitions";   // .collapse / .collapsing
+@import "bootstrap/scss/nav";           // tabs de activos
+@import "bootstrap/scss/navbar";        // menú responsive
+@import "bootstrap/scss/accordion";     // preguntas frecuentes
+
+// 4. Helpers y utilidades
+@import "bootstrap/scss/helpers";
+@import "bootstrap/scss/utilities/api";

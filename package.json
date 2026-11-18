@@ -1,0 +1,23 @@
+{
+  "name": "niacider-serum-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Landing de producto NIACIDER Serum (Laboratorios Cassará). HTML estático + Bootstrap 5.3 a medida + GSAP.",
+  "scripts": {
+    "start": "serve -l 8080 .",
+    "build:bootstrap": "sass --load-path=node_modules --style=compressed --no-source-map --quiet-deps --silence-deprecation=import,global-builtin,color-functions src/scss/bootstrap-custom.scss assets/vendor/bootstrap/bootstrap.min.css && purgecss --config purgecss.config.cjs --output assets/vendor/bootstrap/",
+    "copy:vendor": "cp node_modules/bootstrap/dist/js/bootstrap.min.js assets/vendor/bootstrap/ && cp node_modules/gsap/dist/gsap.min.js node_modules/gsap/dist/ScrollTrigger.min.js assets/vendor/gsap/",
+    "validate:html": "vnu --also-check-css index.html",
+    "validate:css": "vnu --css assets/css/styles.css assets/vendor/bootstrap/bootstrap.min.css",
+    "lighthouse": "lighthouse http://localhost:8080/ --view"
+  },
+  "devDependencies": {
+    "bootstrap": "5.3.9",
+    "gsap": "3.15.1",
+    "lighthouse": "^13.6.0",
+    "purgecss": "^7.0.0",
+    "sass": "^1.80.0",
+    "serve": "^14.2.0",
+    "vnu-jar": "^26.11.17"
+  }
+}
