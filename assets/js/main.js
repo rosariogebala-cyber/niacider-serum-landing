@@ -150,7 +150,7 @@
   });
 
   // Rutina: el frasco "aterriza" en el centro del cielo
-  gsap.from('.routine__bottle', {
+  gsap.from('.routine__bottles img', {
     y: -80, opacity: 0, duration: 1.1, ease: 'back.out(1.6)',
     scrollTrigger: { trigger: '.routine__art', start: 'top 80%', once: true },
   });
