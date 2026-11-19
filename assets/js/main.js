@@ -108,22 +108,9 @@
   gsap.registerPlugin(ScrollTrigger);
   gsap.defaults({ ease: 'power3.out', duration: 0.9 });
 
-  // Entrada del hero (el frasco no arranca en opacity 0 para no demorar el LCP)
+  // Entrada del hero. El fondo fotográfico no se anima: es el LCP.
   const intro = gsap.timeline();
-  intro
-    .fromTo('[data-hero]', { opacity: 0, y: 28 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.8 })
-    .from('[data-hero-bottle]', { y: 60, rotate: -6, duration: 1.3, ease: 'expo.out' }, 0)
-    .from('.hero__ghost', { scale: 0.85, opacity: 0, duration: 1.4, ease: 'expo.out' }, 0.1);
-
-  // Parallax suave del "10%" y del frasco
-  gsap.to('[data-parallax]', {
-    yPercent: -30, ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-  });
-  gsap.to('[data-hero-bottle]', {
-    yPercent: 12, rotate: 4, ease: 'none',
-    scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true },
-  });
+  intro.fromTo('[data-hero]', { opacity: 0, y: 28 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.8 });
 
   // Reveal genérico por bloque.
   // Solo se anima opacity/transform (nunca visibility): el contenido sigue en el
@@ -155,6 +142,11 @@
   gsap.fromTo('.product__figure img', { rotate: -5, y: 30 }, {
     rotate: 3, y: -20, ease: 'none',
     scrollTrigger: { trigger: '.product', start: 'top bottom', end: 'bottom top', scrub: true },
+  });
+
+  gsap.fromTo('.tx__figure img', { y: 28 }, {
+    y: -28, ease: 'none',
+    scrollTrigger: { trigger: '.tx', start: 'top bottom', end: 'bottom top', scrub: true },
   });
 
   // Rutina: el frasco "aterriza" en el centro del cielo

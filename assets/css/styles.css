@@ -3,11 +3,12 @@
    Mobile-first. Bootstrap 5.3 (build a medida) solo aporta grilla, reboot,
    navbar/collapse, tabs y accordion. Toda la estética vive acá.
    --------------------------------------------------------------------------
-   1. Tokens          6. Beneficios      11. Apto para
-   2. Fuentes         7. Producto        12. FAQ
-   3. Base / a11y     8. Fórmula (tabs)  13. CTA final
-   4. Componentes     9. Ciencia         14. Footer
-   5. Header + Hero  10. Rutina          15. Motion
+   1. Tokens          6. Beneficios      11. Rutina
+   2. Fuentes         7. Producto        12. Apto para
+   3. Base / a11y     8. Fórmula (tabs)  13. FAQ
+   4. Componentes     9. Ciencia         14. CTA final
+   5. Header + Hero  10. NIACIDER TX     15. Footer
+                                         16. Motion
    ========================================================================== */
 
 /* 1. Tokens ---------------------------------------------------------------- */
@@ -70,6 +71,8 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 img { max-width: 100%; height: auto; }
+h1, h2, h3, h4, summary { text-wrap: balance; }
+p, li, blockquote, figcaption { text-wrap: pretty; }
 strong, b { font-weight: 700; }
 main:focus { outline: none; }
 
@@ -239,21 +242,20 @@ main:focus { outline: none; }
 }
 .hero__bg {
   position: absolute; inset: 0; z-index: -1;
-  background: url("../images/fondo-hexagonos-rosa-1280.webp") 70% 60% / cover no-repeat;
+}
+.hero__bg img {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: 72% 28%;
 }
 .hero__bg::after {
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(252, 248, 249, .94) 0%, rgba(252, 248, 249, .82) 55%, rgba(252, 248, 249, .55) 100%);
+  background: linear-gradient(180deg, rgba(252, 248, 249, .94) 0%, rgba(252, 248, 249, .86) 42%, rgba(252, 248, 249, .35) 72%, rgba(252, 248, 249, .12) 100%);
 }
 .hero__grid {
   display: grid; gap: 1.5rem;
-  grid-template-columns: minmax(0, 1fr);
-  grid-template-areas: "head" "visual" "body";
   padding-bottom: 2.5rem;
 }
-.hero__head { grid-area: head; min-width: 0; }
-.hero__visual { grid-area: visual; position: relative; display: grid; place-items: center; min-height: 300px; }
-.hero__body { grid-area: body; }
+.hero__head { min-width: 0; }
 
 .hero__title { margin: 0; }
 .hero__formula {
@@ -264,20 +266,6 @@ main:focus { outline: none; }
 .hero__lead { max-width: 36ch; margin: 0 0 1.75rem; font-size: var(--fs-lead); color: var(--c-muted); }
 .hero__lead strong { color: var(--c-graphite); }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.75rem; }
-
-/* "10%" fantasma: queda a la izquierda del frasco y solo el "%" pasa por detrás,
-   así se lee completo y conserva la sensación de profundidad. */
-.hero__ghost::before { content: "10%"; }
-.hero__ghost {
-  position: absolute; left: 0; top: 50%; translate: 0 -50%;
-  font-size: clamp(7rem, 3rem + 22vw, 13rem); font-weight: 800; letter-spacing: -.06em; line-height: 1;
-  color: rgba(53, 181, 191, .24); user-select: none; pointer-events: none;
-}
-.hero__bottle {
-  position: relative; width: clamp(140px, 36vw, 200px);
-  filter: drop-shadow(0 34px 34px rgba(110, 50, 70, .22));
-}
-.hero__visual picture { justify-self: end; margin-right: 4%; position: relative; z-index: 1; }
 
 .trust { position: relative; border-top: 1px solid rgba(74, 74, 82, .12); background: rgba(255, 255, 255, .6); }
 .trust__list {
@@ -291,25 +279,14 @@ main:focus { outline: none; }
   background: radial-gradient(circle at 35% 35%, #fff 0 18%, var(--c-turq) 60%);
 }
 
-@media (min-width: 768px) {
-  .hero__bg { background-image: url("../images/fondo-hexagonos-rosa-2560.webp"); }
-}
 @media (min-width: 1200px) {
   .trust__list { grid-template-columns: repeat(4, auto); justify-content: space-between; }
 }
 @media (min-width: 992px) {
-  .hero__bg::after { background: linear-gradient(90deg, rgba(252, 248, 249, .96) 0%, rgba(252, 248, 249, .82) 45%, rgba(252, 248, 249, 0) 78%); }
-  .hero__grid {
-    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
-    grid-template-areas: "head visual" "body visual";
-    align-items: end; column-gap: 2rem; padding-block: 3rem 4rem;
-  }
-  .hero__body { align-self: start; }
-  .hero__visual { --bottle-w: clamp(220px, 19vw, 300px); min-height: 560px; }
-  /* anclado al frasco: el borde derecho del "%" entra ~25% detrás del frasco */
-  .hero__ghost { left: auto; right: calc(var(--bottle-w) * .78); font-size: clamp(9rem, 1rem + 11vw, 15rem); }
-  .hero__bottle { width: var(--bottle-w); }
-  .hero__visual picture { margin-right: 0; }
+  .hero__bg img { object-position: 64% center; }
+  .hero__bg::after { background: linear-gradient(90deg, rgba(252, 248, 249, .96) 0%, rgba(252, 248, 249, .9) 32%, rgba(252, 248, 249, .42) 56%, rgba(252, 248, 249, .05) 78%); }
+  .hero__head, .hero__body { max-width: 36rem; }
+  .hero__grid { padding-block: 3rem 4rem; }
 }
 
 /* 6. Beneficios ------------------------------------------------------------ */
@@ -328,6 +305,11 @@ main:focus { outline: none; }
 }
 .benefit__title { margin: 0 0 .5rem; font-size: clamp(1.15rem, 1rem + .6vw, 1.45rem); font-weight: 700; color: var(--c-graphite); }
 .benefit p { margin: 0; color: var(--c-muted); }
+.benefits__feel { margin-top: clamp(3.5rem, 7vw, 6rem); }
+.benefits__feel .pull-quote p { font-size: 1.05rem; }
+@media (min-width: 992px) {
+  .benefits__feel .product__claims li:nth-child(2) { margin-right: 0; }
+}
 
 /* 7. Producto -------------------------------------------------------------- */
 .product {
@@ -454,23 +436,6 @@ main:focus { outline: none; }
   .formula__panels { margin-top: 5.5rem; }
 }
 
-/* 9. Ciencia --------------------------------------------------------------- */
-.science { padding-bottom: 0; overflow: hidden; isolation: isolate; }
-.science__bg {
-  position: absolute; inset: 0; z-index: -1;
-  background: url("../images/fondo-burbujas-ciencia-1280.webp") center / cover no-repeat;
-}
-.science__bg::after {
-  content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(255, 255, 255, .93), rgba(255, 255, 255, .8));
-}
-.science__copy { padding-bottom: var(--space-section); }
-.goal-list { list-style: none; padding: 0; margin: 0 0 2.5rem; display: grid; gap: .6rem; }
-.goal-list li {
-  padding: .95rem 1.4rem; border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, var(--c-mist), rgba(216, 235, 236, .2));
-  font-weight: 600; color: var(--c-graphite); line-height: 1.4;
-}
 .pull-quote { position: relative; margin: 0; padding: 2.25rem 0 0 1.75rem; border-left: 2px solid var(--c-turq); }
 .pull-quote::before {
   content: "\201C"; position: absolute; top: -1.6rem; left: 1.25rem;
@@ -478,19 +443,163 @@ main:focus { outline: none; }
 }
 .pull-quote blockquote { margin: 0; }
 .pull-quote p { margin: 0; font-size: var(--fs-lead); line-height: 1.7; color: var(--c-ink); }
-.science__visual { display: flex; justify-content: center; }
-.science__picture { display: block; width: min(360px, 82%); }
-.science__model { display: block; width: 100%; }
+
+/* 9. NIACIDER TX ---------------------------------------------------------- */
+.tx {
+  position: relative; isolation: isolate; overflow: hidden;
+  color: #f4f0f2;
+  background: #1c1c20;
+}
+.tx__bg {
+  position: absolute; inset: 0; z-index: -2;
+  background: #1c1c20 url("../images/fondo-hexagonos-rosa-1280.webp") 75% 40% / cover no-repeat;
+  filter: grayscale(1) contrast(1.15) brightness(.32);
+}
+.tx::before {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(ellipse 55% 70% at 82% 42%, rgba(53, 181, 191, .16), transparent 68%),
+    linear-gradient(105deg, rgba(16, 16, 18, .92) 0%, rgba(24, 24, 28, .78) 46%, rgba(18, 18, 22, .62) 100%);
+}
+.tx__ghost {
+  position: absolute; right: -2%; top: 8%; z-index: 0;
+  font-size: clamp(7rem, 18vw, 14rem); font-weight: 800; letter-spacing: -.06em; line-height: .8;
+  color: rgba(255, 255, 255, .05); user-select: none; pointer-events: none;
+}
+.tx__layout { position: relative; display: grid; gap: 2rem; }
+.tx__copy .section-lead { color: #e6e1e6; max-width: 42ch; }
+.tx__title {
+  margin: 0 0 .85rem;
+  font-weight: 800; letter-spacing: -.04em; line-height: .88; color: #fff;
+  white-space: nowrap;
+  font-size: min(calc((100vw - 3.5rem) / 7.4), 4.75rem);
+}
+.tx__mark { color: #b7eef1; }
+.tx__formula {
+  margin: 0 0 1rem;
+  font-size: clamp(.95rem, .88rem + .35vw, 1.15rem); font-weight: 700;
+  letter-spacing: .04em; text-transform: uppercase; line-height: 1.35; color: #b7eef1;
+}
+.tx__figure { margin: 0; justify-self: center; text-align: center; }
+.tx__figure img {
+  width: clamp(148px, 42vw, 190px); height: auto;
+  filter: drop-shadow(0 28px 28px rgba(0, 0, 0, .45));
+}
+.tx__figure figcaption {
+  margin-top: .85rem;
+  font-size: .8125rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #d5d0d6;
+}
+.tx__cards { display: grid; gap: 1rem; }
+.tx__card {
+  padding: 1.5rem 1.35rem 1.35rem;
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, .06);
+  border-top: 2px solid var(--c-turq);
+}
+.tx__kicker {
+  margin: 0 0 .2rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; color: #8fd8de;
+}
+.tx__card h3 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.35rem, 1.1rem + .8vw, 1.75rem); font-weight: 800; line-height: 1.1;
+  text-transform: uppercase; letter-spacing: .01em; color: #fff;
+}
+.tx__card p { margin: 0 0 .85rem; color: #ece7ea; }
+.tx__card p:last-child { margin-bottom: 0; }
+.tx .check-list { margin-top: .35rem; }
+.tx .check-list li { color: #f3eef2; }
+.tx .check-list li::before { background: rgba(53, 181, 191, .22); }
+.tx .check-list li::after { border-color: #d8f6f8; }
+.compare {
+  position: relative;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+  border-radius: 1.5rem;
+  overflow: hidden;
+}
+.compare__shared {
+  margin: 0; padding: .9rem 1.25rem; text-align: center;
+  background: var(--c-mist); color: var(--c-turq-800);
+  font-weight: 700; line-height: 1.35;
+}
+.compare__shared span {
+  display: block; margin-bottom: .15rem;
+  font-size: .75rem; letter-spacing: .16em; text-transform: uppercase;
+}
+.compare__and { display: block; margin-top: .1rem; letter-spacing: 0; text-transform: none; font-size: 1rem; }
+.compare__pair { position: relative; display: grid; }
+.compare__side {
+  display: grid; grid-template-columns: 1fr; justify-items: start; gap: .85rem;
+  align-items: center; padding: 1.25rem 1.2rem 1.35rem;
+}
+.compare__side img {
+  width: auto; height: 8.5rem; max-width: 100%;
+  object-fit: contain; object-position: center bottom;
+  justify-self: center;
+}
+.compare__side--serum { background: var(--c-porcelain); color: var(--c-ink); }
+.compare__side--serum img { filter: drop-shadow(0 12px 14px rgba(110, 50, 70, .22)); }
+.compare__side--tx { background: #121214; color: #f4f0f2; }
+.compare__side--tx img { filter: drop-shadow(0 12px 16px rgba(0, 0, 0, .45)); }
+.compare__kicker {
+  margin: 0 0 .25rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; line-height: 1.3;
+}
+.compare__side--serum .compare__kicker { color: var(--c-turq-700); }
+.compare__side--tx .compare__kicker { color: #b7eef1; }
+.compare__side h3 {
+  margin: 0; font-size: clamp(1.5rem, 1.2rem + .8vw, 1.85rem); font-weight: 800;
+  letter-spacing: -.03em; line-height: .95; text-transform: uppercase;
+}
+.compare__side--serum h3 { color: var(--c-graphite); }
+.compare__side--tx h3 { color: #fff; }
+.compare__side ul { list-style: none; margin: .7rem 0 0; padding: 0; display: grid; gap: .3rem; }
+.compare__side li { font-weight: 600; line-height: 1.35; }
+.compare__side--serum li { color: var(--c-graphite); }
+.compare__join {
+  display: grid; place-items: center;
+  width: 2.25rem; height: 2.25rem; margin: -1.15rem auto;
+  border-radius: 50%; background: var(--c-turq-700); color: #fff;
+  font-weight: 800; font-size: 1.35rem; line-height: 1;
+  position: relative; z-index: 1;
+}
+.tx__note {
+  position: relative; margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
+  font-weight: 600; color: #ddd8de;
+}
+.tx :focus-visible { outline-color: #fff; }
 
 @media (min-width: 768px) {
-  .science__bg { background-image: url("../images/fondo-burbujas-ciencia-2400.webp"); }
+  .tx__bg { background-image: url("../images/fondo-hexagonos-rosa-2560.webp"); }
+  .tx__cards { grid-template-columns: 1fr 1fr; align-items: start; }
+  .compare__pair { grid-template-columns: 1fr 1fr; }
+  .compare__join {
+    position: absolute; left: 50%; top: 50%; translate: -50% -50%;
+    margin: 0;
+  }
+  .compare__side {
+    grid-template-columns: 4.25rem minmax(0, 1fr);
+    padding: 1.5rem 1.75rem; min-height: 100%;
+  }
+  .compare__side img { height: 9.25rem; }
+  .compare__side--serum { padding-right: 2.4rem; }
+  .compare__side--tx { padding-left: 2.4rem; }
 }
 @media (min-width: 992px) {
-  .science__bg::after { background: linear-gradient(90deg, rgba(255, 255, 255, .95) 0%, rgba(255, 255, 255, .82) 55%, rgba(255, 255, 255, .15) 100%); }
-  .science__picture { width: 100%; max-width: 460px; }
+  .tx__layout {
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas: "copy figure" "cards figure";
+    column-gap: clamp(2rem, 4vw, 4.5rem);
+    row-gap: 2.25rem;
+    align-items: center;
+  }
+  .tx__copy { grid-area: copy; }
+  .tx__cards { grid-area: cards; }
+  .tx__figure { grid-area: figure; align-self: center; }
+  .tx__figure img { width: clamp(170px, 14vw, 210px); }
 }
 
-/* 10. Rutina --------------------------------------------------------------- */
+/* 11. Rutina --------------------------------------------------------------- */
 .routine { background: linear-gradient(180deg, var(--c-porcelain), var(--c-skin)); }
 .routine__am { font-weight: 800; color: var(--c-turq-600); }
 .routine__pm { color: var(--c-navy); }
@@ -510,11 +619,19 @@ main:focus { outline: none; }
 .routine__step:last-child h3 { color: var(--c-navy); }
 .routine__step p { margin: 0; color: var(--c-muted); }
 .routine__step strong { color: var(--c-graphite); }
+.routine__skins {
+  display: grid; gap: 1.25rem; align-items: center;
+  margin-top: clamp(2.5rem, 5vw, 4rem);
+}
+.routine__skins .display-title { margin: 0; text-wrap: wrap; }
 @media (min-width: 768px) {
   .routine__steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
 }
+@media (min-width: 992px) {
+  .routine__skins { grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); }
+}
 
-/* 11. Apto para ------------------------------------------------------------ */
+/* 12. Apto para ------------------------------------------------------------ */
 .skins { background: var(--c-white); padding-block: clamp(3.5rem, 6vw, 5rem); }
 .skin-chips { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .75rem; }
 .skin-chips li {
@@ -524,7 +641,7 @@ main:focus { outline: none; }
 }
 @media (min-width: 992px) { .skin-chips { justify-content: flex-end; } }
 
-/* 12. FAQ ------------------------------------------------------------------ */
+/* 13. FAQ ------------------------------------------------------------------ */
 .faq { background: var(--c-porcelain); }
 .faq__list .accordion-item { border-left: 0; border-right: 0; }
 .faq__list .accordion-header { margin: 0; }
@@ -536,7 +653,7 @@ main:focus { outline: none; }
 .faq__list .accordion-button:focus-visible { outline: var(--focus-ring); outline-offset: 2px; z-index: 3; }
 .faq__list .accordion-body { padding-top: 0; color: var(--c-muted); max-width: 60ch; }
 
-/* 13. CTA final ------------------------------------------------------------ */
+/* 14. CTA final ------------------------------------------------------------ */
 .cta-final {
   position: relative; overflow: hidden; isolation: isolate;
   padding-block: clamp(4rem, 8vw, 7rem);
@@ -551,15 +668,38 @@ main:focus { outline: none; }
 .cta-final__copy .lockup { margin: 0 0 1rem; }
 .cta-final__title { margin: 0 0 .75rem; font-size: clamp(1.5rem, 1.1rem + 1.6vw, 2.25rem); font-weight: 300; text-transform: uppercase; letter-spacing: .02em; }
 .cta-final__text { margin: 0 0 2rem; font-size: var(--fs-lead); }
-.cta-final__bottle { justify-self: center; width: clamp(130px, 34vw, 160px); filter: drop-shadow(0 30px 30px rgba(0, 0, 0, .35)); }
-.cta-final__bottle img { display: block; width: 100%; }
+.cta-final__products {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 1.5rem;
+  justify-items: center; align-items: end;
+}
+.cta-final__products figure { margin: 0; text-align: center; max-width: 14rem; }
+.cta-final__products img {
+  width: auto; height: 11rem; object-fit: contain; object-position: center bottom;
+  filter: drop-shadow(0 24px 22px rgba(0, 0, 0, .35));
+}
+.cta-final__products figcaption {
+  margin: .75rem 0 0; font-size: .875rem; font-weight: 600; line-height: 1.35;
+}
+.cta-final__products figcaption span {
+  display: block; margin-bottom: .2rem;
+  font-size: .75rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+}
+@media (max-width: 575.98px) {
+  .cta-final__products { grid-template-columns: 1fr; justify-items: stretch; gap: 1.25rem; }
+  .cta-final__products figure {
+    display: grid; grid-template-columns: 5.5rem minmax(0, 1fr);
+    align-items: center; gap: 1rem; max-width: none; text-align: left;
+  }
+  .cta-final__products img { height: 8.5rem; }
+}
 .cta-final :focus-visible { outline-color: var(--c-white); }
 @media (min-width: 992px) {
-  .cta-final__inner { grid-template-columns: 1fr auto; }
-  .cta-final__bottle { width: 240px; margin-block: -2rem; rotate: 8deg; }
+  .cta-final__inner { grid-template-columns: 1.2fr auto; }
+  .cta-final__products { gap: 1.5rem 2.5rem; }
+  .cta-final__products img { height: 16rem; }
 }
 
-/* 14. Footer --------------------------------------------------------------- */
+/* 15. Footer --------------------------------------------------------------- */
 .site-footer { padding-block: 3rem 2rem; background: var(--c-white); }
 .site-footer__logo { width: auto; height: 64px; }
 .site-footer__nav { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .25rem 1.5rem; }
@@ -571,7 +711,7 @@ main:focus { outline: none; }
 .site-footer__legal { margin: 2rem 0 0; padding-top: 1.5rem; border-top: 1px solid rgba(74, 74, 82, .12); font-size: .8125rem; color: var(--c-muted); }
 @media (min-width: 768px) { .site-footer__nav { justify-content: flex-end; } }
 
-/* 15. Motion --------------------------------------------------------------- */
+/* 16. Motion --------------------------------------------------------------- */
 /* Estado inicial solo si hay JS y el usuario no pidió menos movimiento.
    Si GSAP no carga, el fallback CSS muestra todo a los 2,5 s. */
 .motion-ok [data-reveal],

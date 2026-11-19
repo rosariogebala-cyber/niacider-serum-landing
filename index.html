@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NIACIDER Serum · Niacinamida 10% + Ácido Hialurónico | Cassará</title>
-  <meta name="description" content="NIACIDER Serum de Cassará: Niacinamida 10%, Ácido Hialurónico HySilk® de bajo peso molecular, Vitamina E y Glicerina. Fortalece la barrera cutánea, hidrata en profundidad y protege frente al estrés oxidativo.">
+  <meta name="description" content="NIACIDER Serum de Cassará: Niacinamida 10%, Ácido Hialurónico HySilk® de bajo peso molecular, Vitamina E y Glicerina. Fortalece la barrera cutánea, hidrata en profundidad y protege frente al estrés oxidativo. La línea incluye NIACIDER TX, con ácido tranexámico al 5%.">
   <meta name="theme-color" content="#fcf8f9">
   <meta name="robots" content="index, follow">
   <!-- URL pública (GitHub Pages). Si se publica en otro dominio, actualizar canonical, og:url, og:image, JSON-LD, sitemap y robots -->
@@ -35,9 +35,9 @@
 
   <!-- Recursos críticos -->
   <link rel="preload" href="assets/fonts/montserrat-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
-        imagesrcset="assets/images/niacider-serum-frasco-320.avif 320w, assets/images/niacider-serum-frasco-480.avif 480w, assets/images/niacider-serum-frasco-640.avif 640w, assets/images/niacider-serum-frasco-960.avif 960w"
-        imagesizes="(min-width: 992px) 300px, 200px">
+  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
+        imagesrcset="assets/images/images-hero-800.webp 800w, assets/images/images-hero-1200.webp 1200w, assets/images/images-hero-1672.webp 1672w"
+        imagesizes="100vw">
 
   <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -51,6 +51,19 @@
     "name": "NIACIDER Serum",
     "description": "Serum con Niacinamida 10%, Ácido Hialurónico HySilk® de bajo peso molecular, Vitamina E y Glicerina. Textura liviana, de rápida absorción y acabado aterciopelado no graso. Dermatológicamente testeado, hipoalergénico, libre de fragancia y parabenos.",
     "image": "https://rosariogebala-cyber.github.io/niacider-serum-landing/assets/images/niacider-serum-frasco-960.webp",
+    "brand": { "@type": "Brand", "name": "Cassará" },
+    "manufacturer": { "@type": "Organization", "name": "Laboratorios Cassará" },
+    "category": "Dermocosmética / Serum facial",
+    "size": "30 ml"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "NIACIDER TX",
+    "description": "Serum con ácido tranexámico 5%, niacinamida 10% y ácido hialurónico. Acción despigmentante, por un doble mecanismo sobre la tirosinasa y la PGE2, y acción antiinflamatoria.",
+    "image": "https://rosariogebala-cyber.github.io/niacider-serum-landing/assets/images/niacider-tx-frasco-480.webp",
     "brand": { "@type": "Brand", "name": "Cassará" },
     "manufacturer": { "@type": "Organization", "name": "Laboratorios Cassará" },
     "category": "Dermocosmética / Serum facial",
@@ -80,6 +93,7 @@
             <li class="nav-item"><a class="nav-link" href="#beneficios">Beneficios</a></li>
             <li class="nav-item"><a class="nav-link" href="#formula">Fórmula</a></li>
             <li class="nav-item"><a class="nav-link" href="#rutina">Modo de uso</a></li>
+            <li class="nav-item"><a class="nav-link" href="#tx">Niacider TX</a></li>
             <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
           </ul>
           <a class="btn-niacider btn-niacider--sm site-header__cta" href="#comprar">Dónde comprar</a>
@@ -92,33 +106,26 @@
 
     <!-- ============ HERO ============ -->
     <section class="hero" id="inicio" aria-labelledby="hero-title">
-      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__bg" aria-hidden="true">
+        <picture>
+          <source type="image/webp" srcset="assets/images/images-hero-800.webp 800w, assets/images/images-hero-1200.webp 1200w, assets/images/images-hero-1672.webp 1672w" sizes="100vw">
+          <img src="assets/images/images_hero.png" width="1672" height="940" fetchpriority="high" alt="">
+        </picture>
+      </div>
       <div class="container hero__grid">
         <div class="hero__head">
           <p class="eyebrow" data-hero>Nuevo lanzamiento</p>
           <h1 class="hero__title" id="hero-title" data-hero>
             <span class="lockup"><span class="lockup__name">NIACIDER</span> <span class="lockup__serum">serum</span></span>
-            <span class="hero__formula">Niacinamida 10% + Ácido Hialurónico</span>
+            <span class="hero__formula">Niacinamida 10% + Ácido&nbsp;Hialurónico</span>
           </h1>
-        </div>
-        <div class="hero__visual">
-          <span class="hero__ghost" aria-hidden="true" data-parallax></span>
-          <picture>
-            <source type="image/avif" srcset="assets/images/niacider-serum-frasco-320.avif 320w, assets/images/niacider-serum-frasco-480.avif 480w, assets/images/niacider-serum-frasco-640.avif 640w, assets/images/niacider-serum-frasco-960.avif 960w" sizes="(min-width: 992px) 300px, 200px">
-            <img class="hero__bottle" data-hero-bottle
-                 src="assets/images/niacider-serum-frasco-640.webp"
-                 srcset="assets/images/niacider-serum-frasco-320.webp 320w, assets/images/niacider-serum-frasco-480.webp 480w, assets/images/niacider-serum-frasco-640.webp 640w, assets/images/niacider-serum-frasco-960.webp 960w"
-                 sizes="(min-width: 992px) 300px, 200px"
-                 width="640" height="1377" fetchpriority="high"
-                 alt="Frasco de NIACIDER Serum de Cassará, contenido neto 30 ml">
-          </picture>
         </div>
         <div class="hero__body">
           <p class="hero__lead" data-hero>
-            El serum ideal para la rutina diaria: <strong>fortalece la barrera cutánea</strong>, <strong>hidrata en profundidad</strong> y <strong>protege frente al estrés oxidativo</strong>.
+            El serum ideal para la rutina diaria: <strong>fortalece la barrera cutánea</strong>, <strong>hidrata en profundidad</strong> y <strong>protege frente al estrés&nbsp;oxidativo</strong>.
           </p>
           <div class="hero__actions" data-hero>
-            <a class="btn-niacider" href="#formula">Descubrí la fórmula</a>
+            <a class="btn-niacider" href="#comprar">Dónde comprar</a>
             <a class="btn-link-niacider" href="#rutina">Cómo usarlo</a>
           </div>
         </div>
@@ -161,21 +168,10 @@
             </ol>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============ PRODUCTO ============ -->
-    <section class="section product" id="producto" aria-labelledby="product-title">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <p class="eyebrow eyebrow--plain">El producto</p>
-          <h2 class="display-title" id="product-title">El <strong>serum ideal</strong> para la <strong>rutina diaria</strong></h2>
-        </header>
-        <div class="product__stage">
+        <div class="product__stage benefits__feel">
           <ul class="product__claims product__claims--left">
-            <li data-reveal><strong>Textura liviana</strong> y de rápida absorción.</li>
-            <li data-reveal><strong>Acabado aterciopelado</strong> no graso.</li>
-            <li data-reveal><strong>Hidrata, suaviza</strong> y mejora la elasticidad.</li>
+            <li data-reveal><strong>Textura liviana</strong> y de rápida&nbsp;absorción.</li>
+            <li data-reveal><strong>Acabado aterciopelado</strong> no&nbsp;graso.</li>
           </ul>
           <figure class="product__figure" data-reveal>
             <picture>
@@ -186,11 +182,11 @@
             </picture>
             <figcaption>Contenido neto 30&nbsp;ml</figcaption>
           </figure>
-          <ul class="product__claims product__claims--right">
-            <li data-reveal><strong>Refuerza la barrera cutánea</strong>, retrasando los signos de envejecimiento.</li>
-            <li data-reveal><strong>Reduce micropliegues</strong> y ayuda a prevenir hiperpigmentaciones.</li>
-            <li data-reveal><strong>Apto para todo tipo de pieles</strong>, incluidas las sensibles.</li>
-          </ul>
+          <figure class="pull-quote" data-reveal>
+            <blockquote>
+              <p>La Niacinamida y el Ácido Hialurónico actúan en conjunto para hidratar en profundidad, suavizar líneas de expresión y arrugas, y mejorar la elasticidad cutánea. Su acción sinérgica reduce micropliegues y ayuda a prevenir alteraciones pigmentarias, dejando la piel más uniforme y&nbsp;luminosa.</p>
+            </blockquote>
+          </figure>
         </div>
       </div>
     </section>
@@ -275,40 +271,6 @@
       </div>
     </section>
 
-    <!-- ============ CIENCIA + LIFESTYLE ============ -->
-    <section class="section science" id="ciencia" aria-labelledby="science-title">
-      <div class="science__bg" aria-hidden="true"></div>
-      <div class="container">
-        <div class="row align-items-end">
-          <div class="col-lg-7 science__copy">
-            <header class="section-head" data-reveal>
-              <p class="eyebrow eyebrow--plain">Innovación</p>
-              <h2 class="display-title" id="science-title"><strong>Innovación</strong> y <strong>ciencia aplicada</strong></h2>
-              <p class="section-lead">NIACIDER Serum combina biotecnología y experiencia dermatológica. Sus activos actúan en sinergia para:</p>
-            </header>
-            <ul class="goal-list">
-              <li data-reveal>Fortalecer la barrera cutánea.</li>
-              <li data-reveal>Mejorar la hidratación profunda.</li>
-              <li data-reveal>Proteger frente al estrés oxidativo y el envejecimiento prematuro.</li>
-            </ul>
-            <figure class="pull-quote" data-reveal>
-              <blockquote>
-                <p>La Niacinamida y el Ácido Hialurónico actúan en conjunto para hidratar en profundidad, suavizar líneas de expresión y arrugas, y mejorar la elasticidad cutánea. Su acción sinérgica reduce micropliegues y ayuda a prevenir alteraciones pigmentarias, dejando la piel más uniforme y luminosa.</p>
-              </blockquote>
-            </figure>
-          </div>
-          <div class="col-lg-5 science__visual">
-            <picture class="science__picture" data-reveal="image">
-              <source type="image/avif" srcset="assets/images/mujer-con-niacider-serum-480.avif 480w, assets/images/mujer-con-niacider-serum-800.avif 800w, assets/images/mujer-con-niacider-serum-1024.avif 1024w" sizes="(min-width: 992px) 440px, 80vw">
-              <img class="science__model" src="assets/images/mujer-con-niacider-serum-800.webp" srcset="assets/images/mujer-con-niacider-serum-480.webp 480w, assets/images/mujer-con-niacider-serum-800.webp 800w, assets/images/mujer-con-niacider-serum-1024.webp 1024w"
-                   sizes="(min-width: 992px) 440px, 80vw" width="800" height="1154" loading="lazy" decoding="async"
-                   alt="Mujer sonriente sosteniendo NIACIDER Serum junto a su rostro">
-            </picture>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ RUTINA ============ -->
     <section class="section routine" id="rutina" aria-labelledby="routine-title">
       <div class="container">
@@ -332,22 +294,87 @@
             <p>Volvé a aplicar NIACIDER Serum. Se recomienda una aplicación por la mañana y otra por la noche.</p>
           </li>
         </ol>
+        <div class="routine__skins">
+          <h3 class="display-title display-title--sm" id="skins-title">Indicado para <strong>todo tipo de&nbsp;pieles</strong></h3>
+          <ul class="skin-chips" data-reveal>
+            <li>Secas</li><li>Normales</li><li>Mixtas</li><li>Grasas</li><li>Sensibles</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <!-- ============ APTO PARA ============ -->
-    <section class="section skins" aria-labelledby="skins-title">
+    <!-- ============ NIACIDER TX ============ -->
+    <section class="section tx" id="tx" aria-labelledby="tx-title">
+      <div class="tx__bg" aria-hidden="true"></div>
+      <span class="tx__ghost" aria-hidden="true">5%</span>
       <div class="container">
-        <div class="row align-items-center g-4">
-          <div class="col-lg-5" data-reveal>
-            <h2 class="display-title display-title--sm" id="skins-title">Indicado para <strong>todo tipo de pieles</strong></h2>
+        <div class="tx__layout">
+          <div class="tx__copy" data-reveal>
+            <p class="eyebrow">La línea</p>
+            <h2 class="tx__title" id="tx-title"><span class="tx__name">NIACIDER</span> <span class="tx__mark">TX</span></h2>
+            <p class="tx__formula">Ácido tranexámico 5% + Niacinamida 10% + Ácido&nbsp;hialurónico</p>
+            <p class="section-lead">Despigmentante y antiinflamatorio: la misma base de NIACIDER Serum, con ácido tranexámico al&nbsp;5%.</p>
           </div>
-          <div class="col-lg-7">
-            <ul class="skin-chips" data-reveal>
-              <li>Secas</li><li>Normales</li><li>Mixtas</li><li>Grasas</li><li>Sensibles</li>
-            </ul>
+          <figure class="tx__figure" data-reveal>
+            <img src="assets/images/niacider-tx-frasco-480.webp"
+                 srcset="assets/images/niacider-tx-frasco-320.webp 320w, assets/images/niacider-tx-frasco-480.webp 480w"
+                 sizes="(min-width: 992px) 200px, 168px"
+                 width="545" height="1764" loading="lazy" decoding="async"
+                 alt="Frasco de NIACIDER TX de Cassará, con ácido tranexámico 5%, niacinamida 10% y ácido hialurónico. Contenido neto 30 mililitros">
+            <figcaption>Contenido neto 30&nbsp;ml</figcaption>
+          </figure>
+          <div class="tx__cards">
+            <article class="tx__card" data-reveal>
+              <p class="tx__kicker">Acción</p>
+              <h3>Despigmentante</h3>
+              <p>Esta actividad la desarrolla a través de un doble&nbsp;mecanismo:</p>
+              <ul class="check-list">
+                <li>Inhibiendo la enzima tirosinasa.</li>
+                <li>Inhibiendo la producción de PGE2, dado que ésta interviene en la producción de melanina tras la&nbsp;irradiación.</li>
+              </ul>
+            </article>
+            <article class="tx__card" data-reveal>
+              <p class="tx__kicker">Acción</p>
+              <h3>Antiinflamatoria</h3>
+              <p>Inhibe la fibrinólisis, reduciendo la producción de mediadores&nbsp;proinflamatorios.</p>
+              <p>Actúa como un derivado de la lisina, se une competitivamente a los sitios de unión de lisina en el plasminógeno y la&nbsp;plasmina.</p>
+              <p>Bloquea el plasminógeno reduciendo su conversión a&nbsp;plasmina.</p>
+              <p>La plasmina también activa mediadores de la inflamación. Al inhibir la plasmina, el ácido tranexámico disminuye la cascada inflamatoria y el&nbsp;edema.</p>
+              <p>Al inhibir la plasmina, reduce la producción de factores de crecimiento vascular (VEGF, endotelina-1), disminuyendo la angiogénesis que causa el enrojecimiento persistente en la rosácea. Disminuye la vascularización y la inflamación, mejorando el enrojecimiento&nbsp;facial.</p>
+            </article>
           </div>
         </div>
+        <div class="compare" data-reveal>
+          <p class="compare__shared"><span>En los dos</span> Niacinamida&nbsp;10% <span class="compare__and">y ácido&nbsp;hialurónico</span></p>
+          <div class="compare__pair">
+            <article class="compare__side compare__side--serum">
+              <img src="assets/images/niacider-serum-frasco-320.webp" width="320" height="689" loading="lazy" decoding="async" alt="Frasco de NIACIDER Serum">
+              <div>
+                <p class="compare__kicker">Mundo claro</p>
+                <h3>Serum</h3>
+                <ul>
+                  <li>Fortalece la barrera cutánea.</li>
+                  <li>Hidrata en profundidad.</li>
+                  <li>Protege frente al estrés oxidativo.</li>
+                </ul>
+              </div>
+            </article>
+            <p class="compare__join" aria-hidden="true">+</p>
+            <article class="compare__side compare__side--tx">
+              <img src="assets/images/niacider-tx-frasco-320.webp" width="320" height="1036" loading="lazy" decoding="async" alt="Frasco de NIACIDER TX">
+              <div>
+                <p class="compare__kicker">Mundo grafito</p>
+                <h3>TX</h3>
+                <ul>
+                  <li>Ácido tranexámico al 5%.</li>
+                  <li>Acción despigmentante.</li>
+                  <li>Acción antiinflamatoria.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+        <p class="tx__note" data-reveal>Consultá por NIACIDER TX en tu farmacia de&nbsp;confianza.</p>
       </div>
     </section>
 
@@ -421,16 +448,24 @@
     <section class="cta-final" id="comprar" aria-labelledby="cta-title">
       <div class="container cta-final__inner">
         <div class="cta-final__copy" data-reveal>
-          <p class="lockup lockup--md" aria-hidden="true"><span class="lockup__name">NIACIDER</span> <span class="lockup__serum">serum</span></p>
-          <h2 class="cta-final__title" id="cta-title">Sumalo a tu rutina diaria</h2>
-          <p class="cta-final__text">Consultá por NIACIDER Serum en tu farmacia de confianza.</p>
+          <h2 class="cta-final__title" id="cta-title">Sumalo a tu rutina&nbsp;diaria</h2>
+          <p class="cta-final__text">Consultá por NIACIDER Serum y NIACIDER TX en tu farmacia de&nbsp;confianza.</p>
           <!-- TODO producción: confirmar URL de compra / store locator -->
           <a class="btn-niacider btn-niacider--light" href="https://www.cassara.com.ar/" rel="noopener">Conocé más en Cassará<span class="visually-hidden"> (sitio externo)</span></a>
         </div>
-        <picture class="cta-final__bottle">
-          <source type="image/avif" srcset="assets/images/niacider-serum-frasco-320.avif 320w, assets/images/niacider-serum-frasco-480.avif 480w, assets/images/niacider-serum-frasco-640.avif 640w" sizes="(min-width: 992px) 240px, 160px">
-          <img src="assets/images/niacider-serum-frasco-480.webp" srcset="assets/images/niacider-serum-frasco-320.webp 320w, assets/images/niacider-serum-frasco-480.webp 480w, assets/images/niacider-serum-frasco-640.webp 640w" sizes="(min-width: 992px) 240px, 160px" width="640" height="1377" loading="lazy" decoding="async" alt="">
-        </picture>
+        <div class="cta-final__products">
+          <figure>
+            <picture>
+              <source type="image/avif" srcset="assets/images/niacider-serum-frasco-320.avif 320w, assets/images/niacider-serum-frasco-480.avif 480w" sizes="140px">
+              <img src="assets/images/niacider-serum-frasco-480.webp" width="320" height="689" loading="lazy" decoding="async" alt="Frasco de NIACIDER Serum, 30 mililitros">
+            </picture>
+            <figcaption><span>Serum</span> Barrera, hidratación y&nbsp;antioxidante</figcaption>
+          </figure>
+          <figure>
+            <img src="assets/images/niacider-tx-frasco-320.webp" width="320" height="1036" loading="lazy" decoding="async" alt="Frasco de NIACIDER TX, 30 mililitros">
+            <figcaption><span>TX</span> Despigmentante y&nbsp;antiinflamatorio</figcaption>
+          </figure>
+        </div>
       </div>
     </section>
   </main>
@@ -447,6 +482,7 @@
             <li><a href="#beneficios">Beneficios</a></li>
             <li><a href="#formula">Fórmula</a></li>
             <li><a href="#rutina">Modo de uso</a></li>
+            <li><a href="#tx">Niacider TX</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
           </ul>
         </nav>
