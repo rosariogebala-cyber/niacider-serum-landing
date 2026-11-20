@@ -189,6 +189,11 @@
     scrollTrigger: { trigger: '.tx', start: 'top bottom', end: 'bottom top', scrub: true },
   });
 
+  gsap.fromTo('.tx__bg img', { yPercent: -7 }, {
+    yPercent: 7, ease: 'none',
+    scrollTrigger: { trigger: '.tx', start: 'top bottom', end: 'bottom top', scrub: true },
+  });
+
   // Rutina: el frasco "aterriza" en el centro del cielo
   gsap.from('.routine__bottles img', {
     y: -80, opacity: 0, duration: 1.1, ease: 'back.out(1.6)',

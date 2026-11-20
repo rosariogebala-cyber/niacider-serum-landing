@@ -102,6 +102,14 @@ main:focus { outline: none; }
   color: var(--c-turq-600);
 }
 .display-title strong { font-weight: 800; }
+.display-title__next {
+  display: block;
+  margin-top: .45rem;
+  font-size: clamp(1.05rem, .85rem + .8vw, 1.5rem);
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: #111;
+}
 .display-title--sm { font-size: clamp(1.625rem, 1.2rem + 1.8vw, 2.5rem); margin: 0; }
 
 .script {
@@ -456,7 +464,19 @@ main:focus { outline: none; }
 }
 
 /* 6. Beneficios ------------------------------------------------------------ */
-.benefits { background: var(--c-white); }
+.benefits { position: relative; isolation: isolate; overflow: hidden; background: #fff8f9; }
+.benefits__photo {
+  position: absolute; inset: 0; z-index: -1; pointer-events: none;
+}
+.benefits__photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 58%;
+}
+.benefits__photo::after {
+  content: ""; position: absolute; inset: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, .9) 0%, rgba(255, 255, 255, .82) 40%, rgba(255, 255, 255, .86) 100%);
+}
+.benefits .container { position: relative; z-index: 1; }
 .benefit-list { list-style: none; counter-reset: benefit; padding: 0; margin: 0; }
 .benefit {
   counter-increment: benefit;
@@ -633,15 +653,19 @@ main:focus { outline: none; }
   background: #1c1c20;
 }
 .tx__bg {
-  position: absolute; inset: 0; z-index: -2;
-  background: #1c1c20 url("../images/fondo-hexagonos-rosa-1280.webp") 75% 40% / cover no-repeat;
-  filter: grayscale(1) contrast(1.15) brightness(.32);
+  position: absolute; inset: 0; z-index: -2; overflow: hidden; pointer-events: none;
+  transform: scaleX(-1);
+  background: #141416;
+}
+.tx__bg img {
+  position: absolute; left: 0; width: 100%; height: 128%; top: -14%;
+  object-fit: cover; object-position: center 40%;
 }
 .tx::before {
   content: ""; position: absolute; inset: 0; z-index: -1;
   background:
-    radial-gradient(ellipse 55% 70% at 82% 42%, rgba(53, 181, 191, .16), transparent 68%),
-    linear-gradient(105deg, rgba(16, 16, 18, .92) 0%, rgba(24, 24, 28, .78) 46%, rgba(18, 18, 22, .62) 100%);
+    linear-gradient(90deg, rgba(10, 10, 12, .72) 0%, rgba(12, 12, 14, .48) 46%, rgba(16, 16, 18, .22) 100%),
+    linear-gradient(180deg, rgba(10, 10, 12, .35) 0%, rgba(10, 10, 12, .12) 40%, rgba(10, 10, 12, .4) 100%);
 }
 .tx__ghost {
   position: absolute; right: -2%; top: 8%; z-index: 0;
@@ -657,8 +681,18 @@ main:focus { outline: none; }
   font-size: min(calc((100vw - 3.5rem) / 7.4), 4.75rem);
 }
 .tx__mark { color: #b7eef1; }
-.tx__formula {
+.tx__line {
+  display: flex; align-items: center; flex-wrap: wrap; gap: .65rem .9rem;
   margin: 0 0 1rem;
+}
+.tx__line .eyebrow,
+.tx__line .tx__formula { margin: 0; }
+@media (max-width: 575.98px) {
+  .tx__line { flex-wrap: nowrap; gap: .5rem; }
+  .tx__line .eyebrow { padding: .4rem .65rem; letter-spacing: .1em; font-size: .6875rem; }
+  .tx__line .tx__formula { font-size: .8125rem; letter-spacing: .02em; }
+}
+.tx__formula {
   font-size: clamp(.95rem, .88rem + .35vw, 1.15rem); font-weight: 700;
   letter-spacing: .04em; text-transform: uppercase; line-height: 1.35; color: #b7eef1;
 }
@@ -675,7 +709,7 @@ main:focus { outline: none; }
 .tx__card {
   padding: 1.5rem 1.35rem 1.35rem;
   border-radius: 1.25rem;
-  background: rgba(255, 255, 255, .06);
+  background: rgba(0, 0, 0, .5);
   border-top: 2px solid var(--c-turq);
 }
 .tx__kicker {
@@ -747,7 +781,7 @@ main:focus { outline: none; }
 }
 .tx__note {
   position: relative; margin: clamp(1.75rem, 3vw, 2.5rem) 0 0;
-  font-weight: 600; color: #ddd8de;
+  font-size: .8125rem; font-weight: 500; color: #ddd8de;
 }
 .tx :focus-visible { outline-color: #fff; }
 
@@ -819,10 +853,28 @@ main:focus { outline: none; }
   border-top: 4px solid var(--c-turq);
 }
 .routine__step--pm { border-top-color: var(--c-navy); }
-.routine__step h3 { margin: 0 0 .5rem; font-size: 1.15rem; font-weight: 800; text-transform: uppercase; letter-spacing: .06em; color: var(--c-turq-700); }
+.routine__step h3 { margin: 0 0 .55rem; font-size: .8125rem; font-weight: 800; text-transform: uppercase; letter-spacing: .16em; color: var(--c-turq-700); }
 .routine__step--pm h3 { color: var(--c-navy); }
-.routine__step p { margin: 0; color: var(--c-muted); }
+.routine__use { margin: 0; max-width: 34ch; line-height: 1.45; color: var(--c-ink); }
 .routine__step strong { color: var(--c-graphite); }
+.routine__world { margin-top: 1.35rem; padding-top: 1rem; }
+.routine__world::before {
+  content: ""; display: block; width: 2.25rem; height: 2px; margin-bottom: .8rem;
+  background: var(--c-turq);
+}
+.routine__step--pm .routine__world::before { background: var(--c-navy); }
+.routine__world p {
+  margin: 0 0 .35rem;
+  font-size: .6875rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; line-height: 1.3;
+}
+.routine__step--am .routine__world p { color: var(--c-turq-700); }
+.routine__step--pm .routine__world p { color: var(--c-navy); }
+.routine__world h4 {
+  margin: 0; font-size: 1.65rem; font-weight: 800; letter-spacing: -.03em; line-height: 1;
+  text-transform: uppercase; color: var(--c-graphite);
+}
+.routine__world ul { list-style: none; margin: .75rem 0 0; padding: 0; display: grid; gap: .4rem; }
+.routine__world li { font-size: .9375rem; font-weight: 500; line-height: 1.35; color: var(--c-muted); }
 @media (max-width: 767.98px) {
   .routine__skyfield::after {
     background:
@@ -844,7 +896,12 @@ main:focus { outline: none; }
   .routine__art { order: 0; grid-column: auto; grid-area: art; margin: 0; max-width: none; }
   .routine__step { padding: 0; border: 0; border-radius: 0; background: none; }
   .routine__step--am { grid-area: am; text-align: right; }
+  .routine__step--am .routine__use,
+  .routine__step--am .routine__world { margin-left: auto; width: max-content; max-width: 100%; }
+  .routine__step--am .routine__world::before { margin-left: auto; }
   .routine__step--pm { grid-area: pm; text-align: left; }
+  .routine__step--pm .routine__use,
+  .routine__step--pm .routine__world { margin-right: auto; width: max-content; max-width: 100%; }
   .routine__stage { grid-template-areas: "am art pm"; }
 }
 .serum__skins {
