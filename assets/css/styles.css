@@ -253,20 +253,20 @@ main:focus { outline: none; }
   src: url("../fonts/lora-italic-subset.woff2") format("woff2"); /* subset: solo la bajada del hero */
 }
 .hero {
-  position: relative; isolation: isolate; overflow: hidden;
+  position: relative; isolation: isolate; overflow: visible; z-index: 2;
   padding-top: calc(var(--header-h) + 1.5rem);
+  padding-bottom: clamp(9.5rem, 34vw, 14rem);
   background:
     radial-gradient(ellipse 65% 60% at 78% 58%, rgba(216, 235, 236, .7) 0%, rgba(216, 235, 236, 0) 70%),
     radial-gradient(ellipse 40% 35% at 10% 10%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 70%),
     linear-gradient(180deg, #fbfdfd 0%, #eef5f6 100%);
 }
 /* Fondo a todo el ancho: ondas de agua (foto). Se revela de izquierda a derecha al cargar. */
-.hero__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: #dcedf4; }
-.hero__waves { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 62% 50%; }
+.hero__bg { position: absolute; inset: 0; z-index: -1; overflow: hidden; background: #eef3f4; }
+.hero__waves { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 72% 28%; }
 .hero__bg::after {
-  /* velo claro detrás del texto: asegura contraste sobre la foto */
   content: ""; position: absolute; inset: 0;
-  background: linear-gradient(180deg, rgba(248, 252, 253, .78) 0%, rgba(248, 252, 253, .35) 38%, rgba(248, 252, 253, 0) 60%, rgba(248, 252, 253, .55) 100%);
+  background: linear-gradient(180deg, rgba(248, 252, 253, .55) 0%, rgba(248, 252, 253, .12) 34%, rgba(248, 252, 253, 0) 62%);
 }
 .hero__grid {
   position: relative;
@@ -275,7 +275,7 @@ main:focus { outline: none; }
   row-gap: 1rem; padding-bottom: 2.25rem;
 }
 .hero__head { grid-area: head; }
-.hero__visual { grid-area: visual; position: relative; margin-inline: calc(var(--bs-gutter-x, 2rem) * -.5); }
+.hero__visual { grid-area: visual; position: relative; height: 0; margin: 0; }
 .hero__body { grid-area: body; }
 
 .hero__badge {
@@ -294,9 +294,12 @@ main:focus { outline: none; }
   font-family: "Lora", Georgia, "Times New Roman", serif; font-style: italic; font-weight: 400;
   font-size: clamp(1.35rem, 1rem + 1.5vw, 2.25rem); line-height: 1.22; color: var(--c-graphite);
 }
+@media (min-width: 992px) {
+  .hero__tagline br { display: none; }
+}
 /* Escena del hero (capas): piso, ola de atrás, podio, ola de adelante, frascos y burbujas.
    Medidas en % del escenario (proporción 1672 × 941) para que escale entero. */
-.scene { position: relative; aspect-ratio: 1672 / 941; perspective: 1400px; }
+.scene { position: relative; height: 0; perspective: 1400px; }
 .scene > * { position: absolute; }
 /* Gel de fondo (detrás del podio y de los frascos): se "abre" de izquierda a derecha al cargar. */
 .scene__gel { z-index: 2; left: 25%; top: -16%; width: 90%; pointer-events: none; filter: drop-shadow(0 10px 18px rgba(40, 110, 130, .12)); }
@@ -311,9 +314,20 @@ main:focus { outline: none; }
 
 /* Frascos: el contenedor recibe la entrada y el parallax (GSAP); .scene__lift, el
    levante al pasar el mouse (solo CSS). La sombra de contacto se achica al subir. */
-.scene__product { bottom: 20.5%; width: 12.2%; z-index: 5; }
-.scene__product--serum { left: 36.6%; }
-.scene__product--tx { left: 51.2%; }
+.hero__products {
+  position: absolute; z-index: 3; left: 50%; bottom: -2.75rem;
+  translate: -50% 0;
+  width: min(32rem, 88vw);
+  aspect-ratio: 1672 / 941;
+  pointer-events: none;
+}
+.hero__products .scene__podium { position: absolute; z-index: 1; left: 21%; top: 70%; width: 58%; }
+.hero__products .scene__product {
+  position: absolute; z-index: 2; bottom: 20.5%; width: 12.2%;
+  pointer-events: auto;
+}
+.hero__products .scene__product--serum { left: 36.6%; }
+.hero__products .scene__product--tx { left: 51.2%; }
 .scene__product::after {
   /* sombra de contacto: oscura y pegada a la base del frasco */
   content: ""; position: absolute; z-index: -1; left: -4%; right: -8%; bottom: -3%; height: 7%;
@@ -379,19 +393,20 @@ main:focus { outline: none; }
 }
 .hero__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 2rem; }
 
-@media (max-width: 575.98px) {
+@media (max-width: 991.98px) {
   .hero__benefits li { flex-basis: 100%; }
   .hero__benefits li + li { padding-left: 0; border-left: 0; margin-left: 0; }
 }
 @media (min-width: 992px) {
-  .hero { display: flex; align-items: center; min-height: min(80svh, 720px); padding-top: var(--header-h); }
+  .hero { display: flex; align-items: flex-start; min-height: 0; padding-top: var(--header-h); padding-bottom: 7rem; }
+  .hero__products { bottom: -2.5rem; width: 45%; }
   .hero__grid {
     grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
     grid-template-areas: "head visual" "body visual";
     column-gap: 2rem; row-gap: 0; align-items: end; padding-block: 1.5rem 2.5rem;
   }
   .hero__head { align-self: end; }
-  .hero__bg::after { background: linear-gradient(90deg, rgba(248, 252, 253, .82) 0%, rgba(248, 252, 253, .55) 30%, rgba(248, 252, 253, 0) 52%); }
+  .hero__bg::after { background: linear-gradient(90deg, rgba(248, 252, 253, .78) 0%, rgba(248, 252, 253, .28) 26%, rgba(248, 252, 253, 0) 46%); }
   .hero__body { align-self: start; padding-top: 1.75rem; }
   .hero__benefits { margin-bottom: 2.25rem; }
   .hero__visual { align-self: end; margin-inline: -6% -14%; margin-bottom: -4%; }
@@ -432,13 +447,13 @@ main:focus { outline: none; }
 .line-card--tx:focus-visible { outline-color: #fff; }
 
 .trust {
-  position: relative;
+  position: relative; z-index: 1;
   border-top: 1px solid rgba(255, 255, 255, .6);
   background: linear-gradient(180deg, rgba(250, 244, 241, .94), rgba(246, 238, 234, .98));
 }
 .trust__list {
   display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0;
-  list-style: none; margin: 0 auto; padding: .5rem 1rem; max-width: 1100px;
+  list-style: none; margin: 0 auto; padding: 1rem 1rem; max-width: 1100px;
   color: var(--c-graphite);
 }
 .trust__list li {
@@ -786,7 +801,6 @@ main:focus { outline: none; }
 .tx :focus-visible { outline-color: #fff; }
 
 @media (min-width: 768px) {
-  .tx__bg { background-image: url("../images/fondo-hexagonos-rosa-2560.webp"); }
   .tx__cards { grid-template-columns: 1fr 1fr; align-items: start; }
   .compare__pair { grid-template-columns: 1fr 1fr; }
   .compare__join {

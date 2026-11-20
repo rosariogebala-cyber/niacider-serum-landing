@@ -100,7 +100,6 @@
             <li class="nav-item"><a class="nav-link" href="#tx">Niacider TX</a></li>
             <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
           </ul>
-          <a class="btn-niacider btn-niacider--sm site-header__cta" href="#comprar">Dónde comprar</a>
         </div>
       </div>
     </nav>
@@ -112,34 +111,21 @@
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
         <picture>
-          <source type="image/avif" srcset="assets/images/hero-ondas-agua-768.avif 768w, assets/images/hero-ondas-agua-1280.avif 1280w, assets/images/hero-ondas-agua-1672.avif 1672w" sizes="100vw">
-          <img class="hero__waves" src="assets/images/hero-ondas-agua-1280.webp" srcset="assets/images/hero-ondas-agua-768.webp 768w, assets/images/hero-ondas-agua-1280.webp 1280w, assets/images/hero-ondas-agua-1672.webp 1672w" sizes="100vw"
+          <source type="image/avif" srcset="assets/images/images-hero-mujer-800.avif 800w, assets/images/images-hero-mujer-1200.avif 1200w, assets/images/images-hero-mujer-1672.avif 1672w" sizes="100vw">
+          <img class="hero__waves" src="assets/images/images_hero_mujer.png" srcset="assets/images/images-hero-mujer-800.webp 800w, assets/images/images-hero-mujer-1200.webp 1200w, assets/images/images-hero-mujer-1672.webp 1672w" sizes="100vw"
                width="1672" height="941" alt="">
         </picture>
       </div>
-      <div class="container hero__grid">
-        <div class="hero__head">
-          <p class="hero__badge" data-hero>Nueva línea</p>
-          <h1 class="hero__title" id="hero-title" data-hero>NIACIDER<span class="visually-hidden">: Serum y TX de Cassará</span></h1>
-          <p class="hero__tagline" data-hero>Dos fórmulas. Una nueva forma de cuidar tu&nbsp;piel.</p>
-        </div>
-
-        <div class="hero__visual">
-          <div class="scene" data-scene-root>
-            <div class="scene__floor" aria-hidden="true"></div>
-            <picture class="scene__gel" aria-hidden="true">
-              <source type="image/avif" srcset="assets/images/escena-gel-640.avif 640w, assets/images/escena-gel-960.avif 960w, assets/images/escena-gel-1400.avif 1400w" sizes="(min-width: 992px) 52vw, 100vw">
-              <img src="assets/images/escena-gel-960.webp" srcset="assets/images/escena-gel-640.webp 640w, assets/images/escena-gel-960.webp 960w, assets/images/escena-gel-1400.webp 1400w" sizes="(min-width: 992px) 52vw, 100vw" width="1400" height="696" alt="" fetchpriority="low" decoding="async">
-            </picture>
-            <picture class="scene__podium" aria-hidden="true">
-              <source type="image/avif" srcset="assets/images/escena-pedestal-640.avif 640w, assets/images/escena-pedestal-960.avif 960w, assets/images/escena-pedestal-1400.avif 1400w" sizes="(min-width: 992px) 36vw, 70vw">
-              <img src="assets/images/escena-pedestal-960.webp" srcset="assets/images/escena-pedestal-640.webp 640w, assets/images/escena-pedestal-960.webp 960w, assets/images/escena-pedestal-1400.webp 1400w" sizes="(min-width: 992px) 36vw, 70vw" width="1605" height="381" alt="" decoding="async">
-            </picture>
+      <div class="hero__products">
+        <picture class="scene__podium" aria-hidden="true">
+          <source type="image/avif" srcset="assets/images/escena-pedestal-640.avif 640w, assets/images/escena-pedestal-960.avif 960w, assets/images/escena-pedestal-1400.avif 1400w" sizes="(min-width: 992px) 34vw, 72vw">
+          <img src="assets/images/escena-pedestal-960.webp" srcset="assets/images/escena-pedestal-640.webp 640w, assets/images/escena-pedestal-960.webp 960w, assets/images/escena-pedestal-1400.webp 1400w" sizes="(min-width: 992px) 34vw, 72vw" width="1605" height="381" alt="" decoding="async">
+        </picture>
             <div class="scene__product scene__product--serum" data-scene="product">
               <span class="scene__lift">
                 <picture>
-                  <source type="image/avif" srcset="assets/images/escena-frasco-serum-160.avif 160w, assets/images/escena-frasco-serum-240.avif 240w, assets/images/escena-frasco-serum-360.avif 360w" sizes="(min-width: 992px) 12vw, 22vw">
-                  <img src="assets/images/escena-frasco-serum-240.webp" srcset="assets/images/escena-frasco-serum-160.webp 160w, assets/images/escena-frasco-serum-240.webp 240w, assets/images/escena-frasco-serum-360.webp 360w" sizes="(min-width: 992px) 12vw, 22vw"
+                  <source type="image/avif" srcset="assets/images/escena-frasco-serum-160.avif 160w, assets/images/escena-frasco-serum-240.avif 240w, assets/images/escena-frasco-serum-360.avif 360w" sizes="140px">
+                  <img src="assets/images/escena-frasco-serum-240.webp" srcset="assets/images/escena-frasco-serum-160.webp 160w, assets/images/escena-frasco-serum-240.webp 240w, assets/images/escena-frasco-serum-360.webp 360w" sizes="140px"
                        width="240" height="805" fetchpriority="high" alt="Frasco de NIACIDER Serum, 30 ml">
                 </picture>
               </span>
@@ -147,12 +133,21 @@
             <div class="scene__product scene__product--tx" data-scene="product">
               <span class="scene__lift">
                 <picture>
-                  <source type="image/avif" srcset="assets/images/escena-frasco-tx-160.avif 160w, assets/images/escena-frasco-tx-240.avif 240w, assets/images/escena-frasco-tx-360.avif 360w" sizes="(min-width: 992px) 12vw, 22vw">
-                  <img src="assets/images/escena-frasco-tx-240.webp" srcset="assets/images/escena-frasco-tx-160.webp 160w, assets/images/escena-frasco-tx-240.webp 240w, assets/images/escena-frasco-tx-360.webp 360w" sizes="(min-width: 992px) 12vw, 22vw"
+                  <source type="image/avif" srcset="assets/images/escena-frasco-tx-160.avif 160w, assets/images/escena-frasco-tx-240.avif 240w, assets/images/escena-frasco-tx-360.avif 360w" sizes="140px">
+                  <img src="assets/images/escena-frasco-tx-240.webp" srcset="assets/images/escena-frasco-tx-160.webp 160w, assets/images/escena-frasco-tx-240.webp 240w, assets/images/escena-frasco-tx-360.webp 360w" sizes="140px"
                        width="240" height="805" fetchpriority="high" alt="Frasco de NIACIDER TX, 30 ml">
                 </picture>
               </span>
             </div>
+      </div>
+      <div class="container hero__grid">
+        <div class="hero__head">
+          <h1 class="hero__title" id="hero-title" data-hero>NIACIDER<span class="visually-hidden">: Serum y TX de Cassará</span></h1>
+          <p class="hero__tagline" data-hero>Dos fórmulas.<br> Una nueva forma<br> de cuidar tu&nbsp;piel.</p>
+        </div>
+
+        <div class="hero__visual">
+          <div class="scene" data-scene-root>
             <img class="scene__bubble scene__bubble--a" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
             <img class="scene__bubble scene__bubble--b" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
             <img class="scene__bubble scene__bubble--c" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
@@ -170,10 +165,6 @@
               <span>Piel más uniforme y&nbsp;protegida</span>
             </li>
           </ul>
-          <div class="hero__actions" data-hero>
-            <a class="btn-niacider" href="#formula">Conocé la línea</a>
-            <a class="btn-link-niacider" href="#rutina">Compará las fórmulas</a>
-          </div>
         </div>
       </div>
     </section>

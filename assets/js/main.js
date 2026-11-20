@@ -119,11 +119,6 @@
       onComplete: () => { waves.style.maskImage = 'none'; waves.style.webkitMaskImage = 'none'; },
     }, 0)
     .from(waves, { scale: 1.08, duration: 2.6, ease: 'power2.out' }, 0)
-    .to('.scene__gel', {
-      maskPosition: '0% 0%', WebkitMaskPosition: '0% 0%', scale: 1, duration: 1.7, ease: 'power2.inOut',
-      onComplete: () => { const g = document.querySelector('.scene__gel'); g.style.maskImage = 'none'; g.style.webkitMaskImage = 'none'; },
-    }, 0.45)
-    .to('.scene__floor', { opacity: 1, duration: 0.8 }, 0.3)
     .to('.scene__podium', { opacity: 1, y: 0, duration: 0.9 }, 0.3)
     .to('.scene__product', { y: 0, duration: 1, ease: 'bounce.out', stagger: 0.15 }, 0.6)
     .to('.scene__bubble', { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)', stagger: 0.08 }, 1.1);
