@@ -108,9 +108,47 @@
   gsap.registerPlugin(ScrollTrigger);
   gsap.defaults({ ease: 'power3.out', duration: 0.9 });
 
-  // Entrada del hero. El fondo fotográfico no se anima: es el LCP.
-  const intro = gsap.timeline();
-  intro.fromTo('[data-hero]', { opacity: 0, y: 28 }, { opacity: 1, y: 0, stagger: 0.1, duration: 0.8 });
+  // Entrada del hero. El texto ya está pintado (LCP) y solo se desplaza; los frascos
+  // tampoco arrancan invisibles. La ola se "dibuja" y el resto se apoya en el podio.
+  const intro = gsap.timeline({ delay: 0.1 });
+  const waves = document.querySelector('.hero__waves');
+  intro
+    .from('[data-hero]', { y: 24, duration: 0.9, stagger: 0.06 }, 0)
+    .to(waves, {
+      maskPosition: '0% 0%', WebkitMaskPosition: '0% 0%', duration: 1.9, ease: 'power2.inOut',
+      onComplete: () => { waves.style.maskImage = 'none'; waves.style.webkitMaskImage = 'none'; },
+    }, 0)
+    .from(waves, { scale: 1.08, duration: 2.6, ease: 'power2.out' }, 0)
+    .to('.scene__gel', {
+      maskPosition: '0% 0%', WebkitMaskPosition: '0% 0%', scale: 1, duration: 1.7, ease: 'power2.inOut',
+      onComplete: () => { const g = document.querySelector('.scene__gel'); g.style.maskImage = 'none'; g.style.webkitMaskImage = 'none'; },
+    }, 0.45)
+    .to('.scene__floor', { opacity: 1, duration: 0.8 }, 0.3)
+    .to('.scene__podium', { opacity: 1, y: 0, duration: 0.9 }, 0.3)
+    .to('.scene__product', { y: 0, duration: 1, ease: 'bounce.out', stagger: 0.15 }, 0.6)
+    .to('.scene__bubble', { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(2)', stagger: 0.08 }, 1.1);
+
+
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    // Profundidad al scrollear: cada capa a su velocidad (yPercent, para no pisar la entrada).
+    const range = { trigger: hero, start: 'top top', end: 'bottom top', scrub: 0.7 };
+    gsap.to('.scene__product', { yPercent: -10, ease: 'none', scrollTrigger: { ...range } });
+    gsap.to('.scene__bubble', { yPercent: (i) => -120 - i * 40, ease: 'none', scrollTrigger: { ...range } });
+  }
+
+  // Ciclo del gel: ya abierto, se mantiene unos segundos, se esparce hasta desaparecer y vuelve a
+  // aparecer. Ocurre una sola vez y termina con el gel visible (sin movimiento continuo).
+  const gel = document.querySelector('.scene__gel');
+  const gelImg = gel && gel.querySelector('img');
+  if (gel && gelImg) {
+    gsap.timeline({ delay: 5.2 })
+      .to(gel, { scaleX: 1.22, scaleY: 1.08, opacity: 0, duration: 1.5, ease: 'power2.in', transformOrigin: '50% 60%' })
+      .to(gelImg, { filter: 'blur(14px)', duration: 1.5, ease: 'power2.in' }, '<')
+      .set(gel, { scaleX: 0.86, scaleY: 0.94, transformOrigin: '0% 60%' }, '+=1.6')
+      .to(gel, { scaleX: 1, scaleY: 1, opacity: 1, duration: 1.8, ease: 'power3.out' })
+      .to(gelImg, { filter: 'blur(0px)', duration: 1.8, ease: 'power3.out' }, '<');
+  }
 
   // Reveal genérico por bloque.
   // Solo se anima opacity/transform (nunca visibility): el contenido sigue en el
@@ -138,11 +176,13 @@
     }
   });
 
-  // Producto: el frasco gira apenas mientras se recorre la sección
-  gsap.fromTo('.product__figure img', { rotate: -5, y: 30 }, {
-    rotate: 3, y: -20, ease: 'none',
-    scrollTrigger: { trigger: '.product', start: 'top bottom', end: 'bottom top', scrub: true },
-  });
+  // Producto: el frasco gira apenas mientras se recorre la sección (solo si la sección existe)
+  if (document.querySelector('.product .product__figure img')) {
+    gsap.fromTo('.product__figure img', { rotate: -5, y: 30 }, {
+      rotate: 3, y: -20, ease: 'none',
+      scrollTrigger: { trigger: '.product', start: 'top bottom', end: 'bottom top', scrub: true },
+    });
+  }
 
   gsap.fromTo('.tx__figure img', { y: 28 }, {
     y: -28, ease: 'none',

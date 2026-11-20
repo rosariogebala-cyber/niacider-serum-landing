@@ -14,20 +14,20 @@
   <meta property="og:type" content="product">
   <meta property="og:locale" content="es_AR">
   <meta property="og:site_name" content="Cassará">
-  <meta property="og:title" content="NIACIDER Serum · Niacinamida 10% + Ácido Hialurónico">
-  <meta property="og:description" content="Desarrollado con experiencia. Inspirado en la piel. El serum ideal para la rutina diaria.">
+  <meta property="og:title" content="NIACIDER · Serum y TX | Cassará">
+  <meta property="og:description" content="Dos serums con la misma base de cuatro activos: NIACIDER Serum (Niacinamida 10% + Ácido Hialurónico) y NIACIDER TX, que suma ácido tranexámico al 5%.">
   <meta property="og:url" content="https://rosariogebala-cyber.github.io/niacider-serum-landing/">
   <meta property="og:image" content="https://rosariogebala-cyber.github.io/niacider-serum-landing/assets/images/og-niacider.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Frasco de NIACIDER Serum de Cassará con la leyenda Niacinamida 10% más Ácido Hialurónico">
+  <meta property="og:image:alt" content="Mujer aplicándose serum junto a los frascos de NIACIDER Serum y NIACIDER TX de Cassará">
 
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="NIACIDER Serum · Niacinamida 10% + Ácido Hialurónico">
-  <meta name="twitter:description" content="Desarrollado con experiencia. Inspirado en la piel. El serum ideal para la rutina diaria.">
+  <meta name="twitter:title" content="NIACIDER · Serum y TX | Cassará">
+  <meta name="twitter:description" content="Dos serums con la misma base de cuatro activos. NIACIDER TX suma ácido tranexámico al 5%.">
   <meta name="twitter:image" content="https://rosariogebala-cyber.github.io/niacider-serum-landing/assets/images/og-niacider.jpg">
-  <meta name="twitter:image:alt" content="Frasco de NIACIDER Serum de Cassará">
+  <meta name="twitter:image:alt" content="Frascos de NIACIDER Serum y NIACIDER TX de Cassará">
 
   <link rel="icon" href="favicon.ico" sizes="48x48">
   <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32">
@@ -35,9 +35,13 @@
 
   <!-- Recursos críticos -->
   <link rel="preload" href="assets/fonts/montserrat-variable-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="preload" as="image" type="image/webp" fetchpriority="high"
-        imagesrcset="assets/images/images-hero-800.webp 800w, assets/images/images-hero-1200.webp 1200w, assets/images/images-hero-1672.webp 1672w"
-        imagesizes="100vw">
+  <link rel="preload" href="assets/fonts/lora-italic-subset.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesrcset="assets/images/escena-frasco-serum-160.avif 160w, assets/images/escena-frasco-serum-240.avif 240w, assets/images/escena-frasco-serum-360.avif 360w"
+        imagesizes="(min-width: 992px) 12vw, 22vw">
+  <link rel="preload" as="image" type="image/avif" fetchpriority="high"
+        imagesrcset="assets/images/escena-frasco-tx-160.avif 160w, assets/images/escena-frasco-tx-240.avif 240w, assets/images/escena-frasco-tx-360.avif 360w"
+        imagesizes="(min-width: 992px) 12vw, 22vw">
 
   <link rel="stylesheet" href="assets/vendor/bootstrap/bootstrap.min.css">
   <link rel="stylesheet" href="assets/css/styles.css">
@@ -81,8 +85,8 @@
     <nav class="navbar navbar-expand-lg" aria-label="Principal">
       <div class="container">
         <a class="navbar-brand site-header__brand" href="#inicio">
-          <img src="assets/images/logo-cassara-200.webp" srcset="assets/images/logo-cassara-200.webp 1x, assets/images/logo-cassara-400.webp 2x"
-               width="200" height="109" alt="Cassará, ir al inicio">
+          <picture><source type="image/avif" srcset="assets/images/logo-cassara-200.avif 1x, assets/images/logo-cassara-400.avif 2x"><img src="assets/images/logo-cassara-200.webp" srcset="assets/images/logo-cassara-200.webp 1x, assets/images/logo-cassara-400.webp 2x"
+               width="200" height="109" alt="Cassará, ir al inicio"></picture>
         </a>
         <button class="navbar-toggler site-header__toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-principal"
                 aria-controls="menu-principal" aria-expanded="false" aria-label="Abrir menú">
@@ -91,10 +95,10 @@
         <div class="collapse navbar-collapse" id="menu-principal">
           <ul class="navbar-nav ms-auto site-nav">
             <li class="nav-item"><a class="nav-link" href="#formula">Fórmula</a></li>
+            <li class="nav-item"><a class="nav-link" href="#rutina">Modo de uso</a></li>
             <li class="nav-item"><a class="nav-link" href="#serum">Serum</a></li>
             <li class="nav-item"><a class="nav-link" href="#tx">Niacider TX</a></li>
             <li class="nav-item"><a class="nav-link" href="#preguntas">Preguntas</a></li>
-            <li class="nav-item"><a class="nav-link" href="#rutina">Modo de uso</a></li>
           </ul>
           <a class="btn-niacider btn-niacider--sm site-header__cta" href="#comprar">Dónde comprar</a>
         </div>
@@ -108,70 +112,91 @@
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__bg" aria-hidden="true">
         <picture>
-          <source type="image/webp" srcset="assets/images/images-hero-800.webp 800w, assets/images/images-hero-1200.webp 1200w, assets/images/images-hero-1672.webp 1672w" sizes="100vw">
-          <img src="assets/images/images_hero.png" width="1672" height="940" fetchpriority="high" alt="">
+          <source type="image/avif" srcset="assets/images/hero-ondas-agua-768.avif 768w, assets/images/hero-ondas-agua-1280.avif 1280w, assets/images/hero-ondas-agua-1672.avif 1672w" sizes="100vw">
+          <img class="hero__waves" src="assets/images/hero-ondas-agua-1280.webp" srcset="assets/images/hero-ondas-agua-768.webp 768w, assets/images/hero-ondas-agua-1280.webp 1280w, assets/images/hero-ondas-agua-1672.webp 1672w" sizes="100vw"
+               width="1672" height="941" alt="">
         </picture>
       </div>
       <div class="container hero__grid">
-        <div class="hero__intro" data-hero>
-          <p class="eyebrow">La línea</p>
-          <h1 class="hero__title" id="hero-title">
-            <span class="lockup"><span class="lockup__name">NIACIDER</span></span>
-          </h1>
-          <p class="hero__lead">Dos serums con la misma base de cuatro activos. El TX suma ácido tranexámico al&nbsp;5%.</p>
+        <div class="hero__head">
+          <p class="hero__badge" data-hero>Nueva línea</p>
+          <h1 class="hero__title" id="hero-title" data-hero>NIACIDER<span class="visually-hidden">: Serum y TX de Cassará</span></h1>
+          <p class="hero__tagline" data-hero>Dos fórmulas. Una nueva forma de cuidar tu&nbsp;piel.</p>
         </div>
-        <div class="line-pair" data-hero>
-          <a class="line-card line-card--serum" href="#serum">
-            <span class="line-card__bottle">
-              <img src="assets/images/niacider-serum-frasco-320.webp" width="320" height="689" alt="Frasco de NIACIDER Serum">
-            </span>
-            <span class="line-card__copy">
-              <span class="line-card__name">Serum</span>
-              <span class="line-card__formula">Niacinamida 10% + ácido&nbsp;hialurónico</span>
-              <span class="line-card__role">Fortalece, hidrata y&nbsp;protege</span>
-            </span>
-          </a>
-          <a class="line-card line-card--tx" href="#tx">
-            <span class="line-card__bottle">
-              <img src="assets/images/niacider-tx-frasco-320.webp" width="320" height="1036" alt="Frasco de NIACIDER TX">
-            </span>
-            <span class="line-card__copy">
-              <span class="line-card__name">TX</span>
-              <span class="line-card__formula">+ Ácido tranexámico&nbsp;5%</span>
-              <span class="line-card__role">Despigmentante y&nbsp;antiinflamatorio</span>
-            </span>
-          </a>
+
+        <div class="hero__visual">
+          <div class="scene" data-scene-root>
+            <div class="scene__floor" aria-hidden="true"></div>
+            <picture class="scene__gel" aria-hidden="true">
+              <source type="image/avif" srcset="assets/images/escena-gel-640.avif 640w, assets/images/escena-gel-960.avif 960w, assets/images/escena-gel-1400.avif 1400w" sizes="(min-width: 992px) 52vw, 100vw">
+              <img src="assets/images/escena-gel-960.webp" srcset="assets/images/escena-gel-640.webp 640w, assets/images/escena-gel-960.webp 960w, assets/images/escena-gel-1400.webp 1400w" sizes="(min-width: 992px) 52vw, 100vw" width="1400" height="696" alt="" fetchpriority="low" decoding="async">
+            </picture>
+            <picture class="scene__podium" aria-hidden="true">
+              <source type="image/avif" srcset="assets/images/escena-pedestal-640.avif 640w, assets/images/escena-pedestal-960.avif 960w, assets/images/escena-pedestal-1400.avif 1400w" sizes="(min-width: 992px) 36vw, 70vw">
+              <img src="assets/images/escena-pedestal-960.webp" srcset="assets/images/escena-pedestal-640.webp 640w, assets/images/escena-pedestal-960.webp 960w, assets/images/escena-pedestal-1400.webp 1400w" sizes="(min-width: 992px) 36vw, 70vw" width="1605" height="381" alt="" decoding="async">
+            </picture>
+            <div class="scene__product scene__product--serum" data-scene="product">
+              <span class="scene__lift">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/escena-frasco-serum-160.avif 160w, assets/images/escena-frasco-serum-240.avif 240w, assets/images/escena-frasco-serum-360.avif 360w" sizes="(min-width: 992px) 12vw, 22vw">
+                  <img src="assets/images/escena-frasco-serum-240.webp" srcset="assets/images/escena-frasco-serum-160.webp 160w, assets/images/escena-frasco-serum-240.webp 240w, assets/images/escena-frasco-serum-360.webp 360w" sizes="(min-width: 992px) 12vw, 22vw"
+                       width="240" height="805" fetchpriority="high" alt="Frasco de NIACIDER Serum, 30 ml">
+                </picture>
+              </span>
+            </div>
+            <div class="scene__product scene__product--tx" data-scene="product">
+              <span class="scene__lift">
+                <picture>
+                  <source type="image/avif" srcset="assets/images/escena-frasco-tx-160.avif 160w, assets/images/escena-frasco-tx-240.avif 240w, assets/images/escena-frasco-tx-360.avif 360w" sizes="(min-width: 992px) 12vw, 22vw">
+                  <img src="assets/images/escena-frasco-tx-240.webp" srcset="assets/images/escena-frasco-tx-160.webp 160w, assets/images/escena-frasco-tx-240.webp 240w, assets/images/escena-frasco-tx-360.webp 360w" sizes="(min-width: 992px) 12vw, 22vw"
+                       width="240" height="805" fetchpriority="high" alt="Frasco de NIACIDER TX, 30 ml">
+                </picture>
+              </span>
+            </div>
+            <img class="scene__bubble scene__bubble--a" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
+            <img class="scene__bubble scene__bubble--b" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
+            <img class="scene__bubble scene__bubble--c" data-scene="bubble" src="assets/images/burbuja.svg" width="160" height="160" alt="">
+          </div>
+        </div>
+
+        <div class="hero__body">
+          <ul class="hero__benefits" data-hero>
+            <li>
+              <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3.5c4.6 6 8.5 10.9 8.5 15.6A8.5 8.5 0 0 1 7.5 19.1C7.5 14.4 11.4 9.5 16 3.5Z"/><path d="M11.8 19.8a4.4 4.4 0 0 0 3.4 3.9"/></svg>
+              <span>Hidratación profunda</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3.5 26 7.3v8.3c0 6.4-4.2 10.9-10 12.9-5.8-2-10-6.5-10-12.9V7.3L16 3.5Z"/><path d="M11.7 9.6 16 8l4.3 1.6"/></svg>
+              <span>Piel más uniforme y&nbsp;protegida</span>
+            </li>
+          </ul>
+          <div class="hero__actions" data-hero>
+            <a class="btn-niacider" href="#formula">Conocé la línea</a>
+            <a class="btn-link-niacider" href="#comparar">Compará las fórmulas</a>
+          </div>
         </div>
       </div>
     </section>
 
     <div class="trust">
-      <div class="trust__track">
-        <ul class="trust__list">
-          <li>Dermatológicamente testeado</li>
-          <li>Hipoalergénico</li>
-          <li>Libre de fragancia y parabenos</li>
-          <li>No testeado en animales</li>
-        </ul>
-        <ul class="trust__list" aria-hidden="true">
-          <li>Dermatológicamente testeado</li>
-          <li>Hipoalergénico</li>
-          <li>Libre de fragancia y parabenos</li>
-          <li>No testeado en animales</li>
-        </ul>
-      </div>
+      <ul class="trust__list" aria-label="Beneficios de la línea NIACIDER">
+        <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3.5c4.6 6 8.5 10.9 8.5 15.6A8.5 8.5 0 0 1 7.5 19.1C7.5 14.4 11.4 9.5 16 3.5Z"/><path d="M11.8 19.8a4.4 4.4 0 0 0 3.4 3.9"/></svg><span>Hidrata<br>y equilibra</span></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M12 8l1.9 5.1L19 15l-5.1 1.9L12 22l-1.9-5.1L5 15l5.1-1.9Z"/><path d="M23 4v6M20 7h6M24 19v5M21.5 21.5h5"/></svg><span>Unifica<br>el tono</span></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M3 11c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 17c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/><path d="M3 23c3-3 5-3 8 0s5 3 8 0 5-3 8 0"/></svg><span>Mejora la<br>textura de la piel</span></li>
+        <li><svg viewBox="0 0 32 32" aria-hidden="true" focusable="false"><path d="M16 3.5 26 7.3v8.3c0 6.4-4.2 10.9-10 12.9-5.8-2-10-6.5-10-12.9V7.3L16 3.5Z"/><path d="m11.6 15.8 3 3 5.6-6"/></svg><span>Refuerza la<br>barrera cutánea</span></li>
+      </ul>
     </div>
 
     <!-- ============ FÓRMULA (tabs) ============ -->
     <section class="section formula" id="formula" aria-labelledby="formula-title">
       <div class="container">
+        <header class="section-head section-head--wide" data-reveal>
+          <p class="eyebrow eyebrow--plain">En los dos</p>
+          <h2 class="display-title" id="formula-title">Cuatro activos, <strong>una sinergia</strong></h2>
+          <p class="section-lead">Niacinamida, ácido hialurónico, vitamina E y glicerina. La base de NIACIDER Serum y de NIACIDER&nbsp;TX.</p>
+        </header>
         <div class="row gx-4 gy-5 align-items-start">
           <div class="col-lg-5">
-            <header class="section-head" data-reveal>
-              <p class="eyebrow eyebrow--plain">En los dos</p>
-              <h2 class="display-title" id="formula-title">Cuatro activos, <strong>una sinergia</strong></h2>
-              <p class="section-lead">Niacinamida, ácido hialurónico, vitamina E y glicerina. La base de NIACIDER Serum y de NIACIDER&nbsp;TX.</p>
-            </header>
             <div class="formula__tabs nav" id="formula-tabs" role="tablist" aria-label="Activos de la línea NIACIDER" aria-orientation="vertical" data-reveal>
               <button class="formula__tab nav-link active" id="tab-niacinamida" data-bs-toggle="tab" data-bs-target="#panel-niacinamida" type="button" role="tab" aria-controls="panel-niacinamida" aria-selected="true">
                 <span class="molecule" aria-hidden="true"><svg viewBox="0 0 64 64" focusable="false"><use href="#mol-niacinamida"/></svg></span>
@@ -242,6 +267,37 @@
       </div>
     </section>
 
+    <!-- ============ RUTINA ============ -->
+    <section class="section routine" id="rutina" aria-labelledby="routine-title">
+      <div class="routine__skyfield" aria-hidden="true">
+        <span class="routine__sun"></span>
+        <span class="routine__moon"></span>
+      </div>
+      <div class="container">
+        <header class="section-head section-head--center" data-reveal>
+          <p class="eyebrow eyebrow--plain">Modo de uso</p>
+          <h2 class="display-title" id="routine-title"><span class="routine__am">Mañana</span> y <strong class="routine__pm">noche</strong></h2>
+          <p class="section-lead">Para los dos serums de la&nbsp;línea.</p>
+        </header>
+        <div class="routine__stage">
+          <div class="routine__step routine__step--am" data-reveal>
+            <h3>Por la mañana</h3>
+            <p>Aplicá NIACIDER y completá con <strong>FOTOSOL PLANO</strong> para asegurar una protección completa durante el&nbsp;día.</p>
+          </div>
+          <div class="routine__art" data-reveal>
+            <div class="routine__bottles">
+              <img src="assets/images/niacider-serum-frasco-320.webp" width="320" height="689" loading="lazy" decoding="async" alt="Frasco de NIACIDER Serum">
+              <img src="assets/images/niacider-tx-frasco-320.webp" width="320" height="1036" loading="lazy" decoding="async" alt="Frasco de NIACIDER TX">
+            </div>
+          </div>
+          <div class="routine__step routine__step--pm" data-reveal>
+            <h3>Por la noche</h3>
+            <p>Volvé a aplicar NIACIDER. Se recomienda una aplicación por la mañana y otra por la&nbsp;noche.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ BENEFICIOS ============ -->
     <section class="section benefits" id="serum" aria-labelledby="benefits-title">
       <div class="container">
@@ -306,11 +362,14 @@
             <p class="section-lead">Despigmentante y antiinflamatorio. Se suma a la base de cuatro activos, y es lo propio del&nbsp;TX.</p>
           </div>
           <figure class="tx__figure" data-reveal>
+            <picture>
+              <source type="image/avif" srcset="assets/images/niacider-tx-frasco-320.avif 320w, assets/images/niacider-tx-frasco-480.avif 480w" sizes="(min-width: 992px) 200px, 168px">
             <img src="assets/images/niacider-tx-frasco-480.webp"
                  srcset="assets/images/niacider-tx-frasco-320.webp 320w, assets/images/niacider-tx-frasco-480.webp 480w"
                  sizes="(min-width: 992px) 200px, 168px"
                  width="545" height="1764" loading="lazy" decoding="async"
                  alt="Frasco de NIACIDER TX de Cassará, con ácido tranexámico 5%, niacinamida 10% y ácido hialurónico. Contenido neto 30 mililitros">
+            </picture>
             <figcaption>Contenido neto 30&nbsp;ml</figcaption>
           </figure>
           <div class="tx__cards">
@@ -334,7 +393,7 @@
             </article>
           </div>
         </div>
-        <div class="compare" data-reveal>
+        <div class="compare" id="comparar" data-reveal>
           <p class="compare__shared"><span>En los dos</span> Niacinamida&nbsp;10% <span class="compare__and">y ácido&nbsp;hialurónico</span></p>
           <div class="compare__pair">
             <article class="compare__side compare__side--serum">
@@ -434,36 +493,6 @@
       </div>
     </section>
 
-    <!-- ============ RUTINA ============ -->
-    <section class="section routine" id="rutina" aria-labelledby="routine-title">
-      <div class="container">
-        <header class="section-head section-head--center" data-reveal>
-          <p class="eyebrow eyebrow--plain">Modo de uso</p>
-          <h2 class="display-title" id="routine-title"><span class="routine__am">Mañana</span> y <strong class="routine__pm">noche</strong></h2>
-          <p class="section-lead">Para los dos serums de la&nbsp;línea.</p>
-        </header>
-        <div class="routine__stage">
-          <div class="routine__step routine__step--am" data-reveal>
-            <h3>Por la mañana</h3>
-            <p>Aplicá NIACIDER y completá con <strong>FOTOSOL PLANO</strong> para asegurar una protección completa durante el&nbsp;día.</p>
-          </div>
-          <div class="routine__art" data-reveal>
-            <img class="routine__sky" src="assets/images/rutina-manana-noche-1200.webp"
-                 srcset="assets/images/rutina-manana-noche-600.webp 600w, assets/images/rutina-manana-noche-1200.webp 1200w"
-                 sizes="(min-width: 992px) 32rem, 92vw" width="1200" height="482" alt="">
-            <div class="routine__bottles">
-              <img src="assets/images/niacider-serum-frasco-320.webp" width="320" height="689" alt="Frasco de NIACIDER Serum">
-              <img src="assets/images/niacider-tx-frasco-320.webp" width="320" height="1036" alt="Frasco de NIACIDER TX">
-            </div>
-          </div>
-          <div class="routine__step routine__step--pm" data-reveal>
-            <h3>Por la noche</h3>
-            <p>Volvé a aplicar NIACIDER. Se recomienda una aplicación por la mañana y otra por la&nbsp;noche.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- ============ CTA FINAL ============ -->
     <section class="cta-final" id="comprar" aria-labelledby="cta-title">
       <div class="container cta-final__inner">
@@ -495,19 +524,19 @@
     <div class="container">
       <div class="row g-4 align-items-center">
         <div class="col-md-4">
-          <img src="assets/images/logo-cassara-200.webp" srcset="assets/images/logo-cassara-200.webp 1x, assets/images/logo-cassara-400.webp 2x" width="200" height="109" loading="lazy" alt="Cassará" class="site-footer__logo">
+          <picture><source type="image/avif" srcset="assets/images/logo-cassara-200.avif 1x, assets/images/logo-cassara-400.avif 2x"><img src="assets/images/logo-cassara-200.webp" srcset="assets/images/logo-cassara-200.webp 1x, assets/images/logo-cassara-400.webp 2x" width="200" height="109" loading="lazy" alt="Cassará" class="site-footer__logo"></picture>
         </div>
         <nav class="col-md-8" aria-label="Secciones">
           <ul class="site-footer__nav">
             <li><a href="#formula">Fórmula</a></li>
+            <li><a href="#rutina">Modo de uso</a></li>
             <li><a href="#serum">Serum</a></li>
             <li><a href="#tx">Niacider TX</a></li>
             <li><a href="#preguntas">Preguntas frecuentes</a></li>
-            <li><a href="#rutina">Modo de uso</a></li>
           </ul>
         </nav>
       </div>
-      <p class="site-footer__legal">NIACIDER Serum · Contenido neto 30&nbsp;ml · Dermatológicamente testeado · Hipoalergénico · Libre de fragancia y parabenos · No testeado en animales.<br>© <span data-year>2026</span> Laboratorios Cassará. Todos los derechos reservados.</p>
+      <p class="site-footer__legal">NIACIDER Serum y NIACIDER TX · Contenido neto 30&nbsp;ml c/u · Dermatológicamente testeado · Hipoalergénico · Libre de fragancia y parabenos · No testeado en animales.<br>© <span data-year>2026</span> Laboratorios Cassará. Todos los derechos reservados.</p>
     </div>
   </footer>
 
